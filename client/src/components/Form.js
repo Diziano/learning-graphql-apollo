@@ -29,8 +29,8 @@ export default function Form({ onAddComment }) {
     await addComment();
     setName('');
     setContent('');
-    onAddComment(name, content);
-  }, []);
+    onAddComment();
+  }, [addComment, onAddComment]);
 
   return (
     <form onSubmit={handleSubmit}>

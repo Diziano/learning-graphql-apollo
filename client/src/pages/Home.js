@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
@@ -22,16 +22,12 @@ function Home() {
     loading, error, data, refetch,
   } = useQuery(GET_COMMENTS);
 
-  const handleAddComment = useCallback(() => {
-    refetch();
-  }, []);
-
   if (error) return 'Erro ao buscar os comentários.';
 
   return (
     <>
       <h1>GraphQL Comments</h1>
-      <Form onAddComment={handleAddComment} />
+      <Form onAddComment={refetch} />
       {loading ? (
         'Carregando...'
       ) : (
@@ -39,8 +35,10 @@ function Home() {
           {data.comments.map(({ id, name, content }) => (
             <Comment
               key={id}
+              id={id}
               name={name}
-              description={content}
+              content={content}
+              onDelete={refetch}
             />
           ))}
         </section>

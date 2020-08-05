@@ -29,8 +29,8 @@
 <br/>
 
 ## :computer: Projeto
-Este projeto é resultado do meu primeiro contato com GraphQL, utilizando Apollo.
-O aplicativo possui funcionalizades meramente didáticas de listar postar e excluir comentários.
+Este projeto é resultado do meu primeiro contato com GraphQL, utilizando Apollo.<br>
+O aplicativo possui funcionalidades meramente didáticas de listar postar e excluir comentários.
 
 
 <br/>
